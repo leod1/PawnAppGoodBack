@@ -33,13 +33,13 @@ Ouvrez un terminal et exécutez les commandes suivantes pour cloner les dépôts
 ```bash
 mkdir tempfolder
 cd tempfolder
-git clone https://github.com/leod1/PawnAppBadFront.git
-git clone https://github.com/leod1/PawnAppBadBack.git
-cd PawnAppBadBack
+git clone https://github.com/leod1/PawnAppGoodFront.git
+git clone https://github.com/leod1/PawnAppGoodBack.git
+cd PawnAppGoodBack
 docker compose -f docker-composeDB.yml up -d
 # Attendez que la base de données MongoDB soit entièrement opérationnelle avant de continuer
 docker compose up -d --build
-cd ../PawnAppBadFront
+cd ../PawnAppGoodFront
 docker compose up -d --build
 ```
 
@@ -64,10 +64,10 @@ La méthode de Brute Force est également une vulnérabilité de cette applicati
 
 Pour désinstaller l'application et nettoyer votre environnement local, suivez les étapes ci-dessous. Cela arrêtera et supprimera tous les conteneurs Docker utilisés par PawnApp, ainsi que les images Docker, et enfin, supprimera les dossiers contenant les projets clonés.
 ```bash
-cd PawnAppBadBack
+cd PawnAppGoodBack
 docker-compose down
 docker-compose -f docker-composeDB.yml down
-cd ../PawnAppBadFront
+cd ../PawnAppGoodFront
 docker-compose down
 cd ../../
 rm -rf tempfolder
